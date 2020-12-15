@@ -9,7 +9,7 @@ namespace Music_Player___Part_1___Kobe
     {
         static WindowsMediaPlayer player;
 
-        public static void DoeSwitch(int opties)
+        public void DoeSwitch(int opties)
         {
             switch (opties)
             {
@@ -43,7 +43,7 @@ namespace Music_Player___Part_1___Kobe
             }
         }
 
-        public static void PrintMenu()
+        public void PrintMenu()
         {
             Console.WriteLine("Opties:");
             Console.WriteLine("1:Pause/Play");
@@ -60,7 +60,7 @@ namespace Music_Player___Part_1___Kobe
             Console.WriteLine("Welke optie wenst u te gebruiken?");
         }
 
-        public static void AskUserForSong()
+        public void AskUserForSong()
         {
             Console.WriteLine("Geef de locatie van uw gewenst liedje in:");
             //string locatie = Console.ReadLine();
@@ -71,12 +71,12 @@ namespace Music_Player___Part_1___Kobe
             Console.WriteLine();
         }
 
-        public static void ClearConsole()
+        public void ClearConsole()
         {
             Console.Clear();
         }
 
-        public static void PlayMusic(string file)
+        public void PlayMusic(string file)
         {
             player.URL = file;
         }
