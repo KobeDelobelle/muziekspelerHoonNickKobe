@@ -20,6 +20,8 @@ namespace MusicPlayer
                 int opties = Convert.ToInt32(Console.ReadLine());
 
                 muziekSpeler.DoeSwitch(opties);
+
+                //test
             }
         }
     }
