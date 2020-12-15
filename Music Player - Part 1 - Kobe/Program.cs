@@ -5,14 +5,11 @@ namespace Music_Player___Part_1___Kobe
 {
     internal class Program
     {
-        
-
         private static void Main(string[] args)
         {
             //Class MuziekSpeler aanroepen op een of andere manier of? herkent de opgeroepte methods nu niet uiteraard
 
-            MuziekSpeler muziekSpeler = new MuziekSpeler();  
-            muziekSpeler.
+            MuziekSpeler muziekSpeler = new MuziekSpeler();
 
             while (true)
             {
@@ -26,8 +23,6 @@ namespace Music_Player___Part_1___Kobe
 
                 DoeSwitch(opties);
             }
-
         }
-
     }
 }
