@@ -1,5 +1,6 @@
 ﻿using System;
 using WMPLib;
+using MusicPlayer.Extra;
 
 namespace MusicPlayer
 {
@@ -7,7 +8,6 @@ namespace MusicPlayer
     {
         private static void Main(string[] args)
         {
-            
             MuziekSpeler muziekSpeler = new MuziekSpeler();
 
             while (true)
@@ -15,13 +15,13 @@ namespace MusicPlayer
                 muziekSpeler.ClearConsole();
 
                 muziekSpeler.PrintMenu();
-               
 
                 int opties = Convert.ToInt32(Console.ReadLine());
 
                 muziekSpeler.DoeSwitch(opties);
 
-                //test
+                LogMusic logMusic = new LogMusic();
+                logMusic.InitLog("This is a songname");
             }
         }
     }

@@ -13,14 +13,15 @@ namespace MusicPlayer
         public int IsMuted { get; set; }
         public int isMuted = 0;
 
-        WindowsMediaPlayer player;
+        private WindowsMediaPlayer player;
+
         //opm: ctor hieronder
         public MuziekSpeler()
         {
             player = new WindowsMediaPlayer();
             player.settings.volume = 10;
         }
-        
+
         public void DoeSwitch(int opties)
         {
             IsPlaying = isPlaying++;
@@ -38,7 +39,6 @@ namespace MusicPlayer
                         player.controls.pause();
                     }
 
-                    
                     break;
 
                 case 2:
@@ -87,8 +87,8 @@ namespace MusicPlayer
         public void PlayMusic(string file)
         {
             player.URL = file;
-
         }
+
         public void PrintMenu()
         {
             Console.WriteLine("Opties:");
@@ -108,12 +108,12 @@ namespace MusicPlayer
 
         public void AskUserForSong()
         {
-            Console.WriteLine("Geef de locatie van uw gewenst liedje in:");
+            Console.WriteLine("Welk liedje wil je afspelen:");
             //string locatie = Console.ReadLine();
-            string locatie = "C:\\Music\\Waterloo.mp3";
+            string locatie = "C:/Music/";
 
-            PlayMusic(locatie);
-            Console.ReadLine();
+            string songName = Console.ReadLine();
+            PlayMusic($"{locatie}{songName}.mp3");
             Console.WriteLine();
         }
 
@@ -122,19 +122,14 @@ namespace MusicPlayer
             Console.Clear();
         }
 
-       
-
         public string PrintTitle(string title)
         {
             return title;
-
         }
 
         public string PlaceMusic(string path)
         {
-
             return path;
         }
-
     }
 }
