@@ -104,6 +104,8 @@ namespace MusicPlayer
             Console.WriteLine("Mijn eenvoudige muziekspeler");
             Console.WriteLine("*******************************");
             Console.WriteLine("Welke optie wenst u te gebruiken?");
+
+            ShowVolume();
         }
 
         public void AskUserForSong()
@@ -122,14 +124,59 @@ namespace MusicPlayer
             Console.Clear();
         }
 
-        public string PrintTitle(string title)
+        public void ShowVolume()
         {
-            return title;
-        }
+            int currentVolume = player.settings.volume;
 
-        public string PlaceMusic(string path)
-        {
-            return path;
+            for (int i = 1; i <= 100; i += 5)
+            {
+                Console.Write("#");
+            }
+
+            switch (currentVolume)
+            {
+                case 5:
+                    break;
+
+                case 10:
+                    break;
+
+                case 15:
+                    break;
+
+                case 20:
+                    break;
+
+                case 25:
+                    break;
+
+                case 30:
+                    break;
+
+                case 35:
+                    break;
+
+                case 40:
+                    break;
+
+                case 45:
+                    break;
+
+                case 50:
+                    break;
+
+                case 55:
+                    break;
+
+                case 60:
+                    break;
+
+                case 65:
+                    break;
+
+                case 70:
+                    break;
+            }
         }
     }
 }

@@ -10,8 +10,6 @@ namespace MusicPlayer.Extra
         // Properties
         private const string LOGPATH = "C:/Music/MusicLog.txt";
 
-        //public string SongName { get; set; }
-
         // Methods
         public void InitLog(string SongName)
         {
