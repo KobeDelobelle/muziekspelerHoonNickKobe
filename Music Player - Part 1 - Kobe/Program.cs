@@ -10,19 +10,19 @@ namespace Music_Player___Part_1___Kobe
             //Class MuziekSpeler aanroepen op een of andere manier of? herkent de opgeroepte methods nu niet uiteraard
 
             MuziekSpeler muziekSpeler = new MuziekSpeler();
-            muziekSpeler.
+            WindowsMediaPlayer player;
 
             while (true)
             {
-                ClearConsole();
+                muziekSpeler.ClearConsole();
 
-                PrintMenu();
+                muziekSpeler.PrintMenu();
                 player = new WindowsMediaPlayer();
                 player.settings.volume = 1;
 
                 int opties = Convert.ToInt32(Console.ReadLine());
 
-                DoeSwitch(opties);
+                muziekSpeler.DoeSwitch(opties);
             }
         }
     }

@@ -7,7 +7,7 @@ namespace Music_Player___Part_1___Kobe
 {
     public class MuziekSpeler
     {
-        static WindowsMediaPlayer player;
+        WindowsMediaPlayer player;
 
         public void DoeSwitch(int opties)
         {
