@@ -3,26 +3,67 @@ using System.Collections.Generic;
 using System.Text;
 using WMPLib;
 
-namespace Music_Player___Part_1___Kobe
+namespace MusicPlayer
 {
     public class MuziekSpeler
     {
-        WindowsMediaPlayer player;
+        public int IsPlaying { get; set; }
+        public int isPlaying = 0;
 
+        public int IsMuted { get; set; }
+        public int isMuted = 0;
+
+        WindowsMediaPlayer player;
+        //opm: ctor hieronder
+        public MuziekSpeler()
+        {
+            player = new WindowsMediaPlayer();
+            player.settings.volume = 10;
+        }
+        
         public void DoeSwitch(int opties)
         {
+            IsPlaying = isPlaying++;
+            IsMuted = isMuted++;
             switch (opties)
             {
                 case 1:
-                    player.controls.pause();
-                    player.controls.play();
 
+                    if ((IsPlaying % 2) == 0)
+                    {
+                        player.controls.play();
+                    }
+                    else if ((IsPlaying % 2) != 0)
+                    {
+                        player.controls.pause();
+                    }
+
+                    
                     break;
 
                 case 2:
+
+                    int huidigVolume = player.settings.volume;
+                    Console.WriteLine($"Huidig volume: { huidigVolume}");
+                    Console.WriteLine("Stel het volume opnieuw in");
+                    int nieuwVolume = Convert.ToInt32(Console.ReadLine());
+                    while (nieuwVolume < 0 || nieuwVolume > 100)
+                    {
+                        Console.WriteLine("Geef een geldige waarde in voor volume.");
+                        nieuwVolume = Convert.ToInt32(Console.ReadLine());
+                    }
+                    player.settings.volume = nieuwVolume;
                     break;
 
                 case 3:
+                    if ((IsMuted % 2) == 0)
+                    {
+                        player.settings.mute = false;
+                    }
+                    else if ((IsMuted % 2) != 0)
+                    {
+                        player.settings.mute = true;
+                    }
                     break;
 
                 case 4:
@@ -34,7 +75,7 @@ namespace Music_Player___Part_1___Kobe
                     break;
 
                 case 6:
-                    Environment.Exit(-1);
+                    Environment.Exit(0);
                     break;
 
                 default:
@@ -43,6 +84,11 @@ namespace Music_Player___Part_1___Kobe
             }
         }
 
+        public void PlayMusic(string file)
+        {
+            player.URL = file;
+
+        }
         public void PrintMenu()
         {
             Console.WriteLine("Opties:");
@@ -76,9 +122,19 @@ namespace Music_Player___Part_1___Kobe
             Console.Clear();
         }
 
-        public void PlayMusic(string file)
+       
+
+        public string PrintTitle(string title)
         {
-            player.URL = file;
+            return title;
+
         }
+
+        public string PlaceMusic(string path)
+        {
+
+            return path;
+        }
+
     }
 }

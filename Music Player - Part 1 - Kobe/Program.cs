@@ -1,24 +1,21 @@
 ﻿using System;
 using WMPLib;
 
-namespace Music_Player___Part_1___Kobe
+namespace MusicPlayer
 {
     internal class Program
     {
         private static void Main(string[] args)
         {
-            //Class MuziekSpeler aanroepen op een of andere manier of? herkent de opgeroepte methods nu niet uiteraard
-
+            
             MuziekSpeler muziekSpeler = new MuziekSpeler();
-            WindowsMediaPlayer player;
 
             while (true)
             {
                 muziekSpeler.ClearConsole();
 
                 muziekSpeler.PrintMenu();
-                player = new WindowsMediaPlayer();
-                player.settings.volume = 1;
+               
 
                 int opties = Convert.ToInt32(Console.ReadLine());
 
